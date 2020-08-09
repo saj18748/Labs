@@ -1,0 +1,130 @@
+$date
+	Sun Aug 09 17:37:51 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module tesbench $end
+$var wire 1 ! led2 $end
+$var wire 1 " led1 $end
+$var reg 1 # p1 $end
+$var reg 1 $ p2 $end
+$var reg 1 % p3 $end
+$var reg 1 & p4 $end
+$var reg 1 ' p5 $end
+$var reg 1 ( p6 $end
+$scope module G1 $end
+$var wire 1 # A $end
+$var wire 1 $ B $end
+$var wire 1 % C $end
+$var wire 1 " Y $end
+$var wire 1 ) notB $end
+$var wire 1 * s1 $end
+$var wire 1 + s2 $end
+$upscope $end
+$scope module G2 $end
+$var wire 1 & A $end
+$var wire 1 ' B $end
+$var wire 1 ( C $end
+$var wire 1 ! Y $end
+$var wire 1 , notB $end
+$var wire 1 - s1 $end
+$var wire 1 . s2 $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+x.
+x-
+x,
+x+
+x*
+x)
+x(
+x'
+x&
+x%
+x$
+x#
+x"
+x!
+$end
+#10
+0"
+1)
+0*
+0+
+0%
+0$
+0#
+#11
+1%
+#12
+0)
+0%
+1$
+#13
+1%
+#14
+1"
+1*
+1)
+0%
+0$
+1#
+#15
+1+
+1%
+#16
+0"
+0*
+0+
+0)
+0%
+1$
+#17
+1"
+1+
+1%
+#20
+0!
+1,
+0-
+0.
+0(
+0'
+0&
+#21
+1(
+#22
+0,
+0(
+1'
+#23
+1(
+#24
+1!
+1-
+1,
+0(
+0'
+1&
+#25
+1.
+1(
+#26
+0!
+0-
+0.
+0,
+0(
+1'
+#27
+1!
+1.
+1(
+#40
