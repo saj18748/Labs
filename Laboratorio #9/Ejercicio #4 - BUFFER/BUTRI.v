@@ -19,19 +19,19 @@ endmodule //BUTRI_1bit
 
 // Buffer tri-estado de 4 bits
 
-module BUTRI_4bits (input [3:0]A, input E, output [3:0]Y, output out);
+module BUTRI_4bits (input [3:0]A, input E, output [3:0]Y);
 
-reg out;
+reg [3:0]Y;
 
 always @ ( A )
 	if (A && E) begin
-	out <= 1;
+	Y <= 1;
 	end
 	else if (~A && E) begin
-	out <= 0;
+	Y <= 0;
 	end
 	else begin
-	out <= 1'bz;
+	Y <= 1'bz;
 
 end
 

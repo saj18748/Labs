@@ -1,0 +1,111 @@
+$date
+	Sat Oct 31 04:13:18 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module testbench $end
+$var wire 8 ! data [7:0] $end
+$var reg 4 " address [3:0] $end
+$var reg 1 # enable $end
+$var reg 1 $ read $end
+$scope module U1 $end
+$var wire 4 % address [3:0] $end
+$var wire 1 # enable $end
+$var wire 1 $ read $end
+$var reg 8 & data [7:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx &
+bx %
+x$
+x#
+bx "
+bx !
+$end
+#5
+b1010 !
+b1010 &
+b0 "
+b0 %
+#10
+b110111 !
+b110111 &
+b1 "
+b1 %
+#15
+b11110100 !
+b11110100 &
+b10 "
+b10 %
+#20
+b0 !
+b0 &
+b11 "
+b11 %
+#25
+b1 !
+b1 &
+b100 "
+b100 %
+#30
+b11111111 !
+b11111111 &
+b101 "
+b101 %
+#35
+b10001 !
+b10001 &
+b110 "
+b110 %
+#40
+b1 !
+b1 &
+b111 "
+b111 %
+#45
+b10000 !
+b10000 &
+b1000 "
+b1000 %
+#50
+b0 !
+b0 &
+b1001 "
+b1001 %
+#55
+b10000 !
+b10000 &
+b1010 "
+b1010 %
+#60
+b10101 !
+b10101 &
+b1011 "
+b1011 %
+#65
+b1100000 !
+b1100000 &
+b1100 "
+b1100 %
+#70
+b10010000 !
+b10010000 &
+b1101 "
+b1101 %
+#75
+b1110000 !
+b1110000 &
+b1110 "
+b1110 %
+#80
+b10010000 !
+b10010000 &
+b1111 "
+b1111 %

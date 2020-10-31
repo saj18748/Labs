@@ -1,3 +1,5 @@
+
+
 module FFD (input D,clk, reset,enable, output reg Q );
 
   always @ (posedge clk or posedge reset or posedge enable) begin

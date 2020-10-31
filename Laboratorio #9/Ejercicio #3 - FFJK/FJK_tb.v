@@ -20,9 +20,9 @@ initial begin
 	$display(" J   K | Q   Y");
 	$display("---------------");
 	$monitor(" %b   %b | %b  %b", J,K, Q, Y);
-	#5	J <= 0; K <= 1; reset = 0;
-	#20 J <= 1; K <= 0; reset = 0;
-	#20 J <= 1; K <=1;  reset = 0;
+	#5	J <= 0; K <= 1; 
+	#20 J <= 1; K <= 0;
+	#20 J <= 1; K <=1;
 	#20 $finish;
 end
 
