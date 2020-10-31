@@ -3,39 +3,31 @@
 
 module testbench ();
 
-reg [3:0]address;
-reg read,enable;
+// declaracion de las variables
+reg [6:0]address;
 
-wire [7:0]data;
+wire [12:0]data;
 
-ROM U1(address, enable, read, data);
+ROM U1(address, data);  // se llaman las variables de la programacion principal
 
+// Inicio de la simulacion para el despliege de los datos
 initial begin
 
 $display("Memoria ROM");
-	$display("address |  data");         // se muestan los datos en el diagrama de timing
+	$display("address |  data");
 	$monitor("%d\t%d\t",address, data);
 
-	#5 	address=0;
-	#5 	address=1;
-	#5 	address=2;
-	#5 	address=3;
-	#5 	address=4;
-	#5 	address=5;
-	#5 	address=6;
-	#5 	address=7;
-	#5 	address=8;
-	#5 	address=9;
-	#5 	address=10;
-	#5 	address=11;
-	#5 	address=12;
-	#5 	address=13;
-	#5 	address=14;
-	#5 	address=15;
+	#5 	address = 7'bxxxxxx0;
+	#5  address = 7'b00001x1;
+	#5  address = 7'b1111xx1;
+	#5 address = 	7'b00000x1;
+	#5  address = 7'b1110xx1;
+	#5  address = 7'b1111111;
+	#40 $finish ;
 
 end
 
-initial begin
+initial begin			// se muestan los datos en el diagrama de timing
 	$dumpfile("ROOM_tb.vcd");
 	$dumpvars(0, testbench);
 end

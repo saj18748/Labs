@@ -12,8 +12,10 @@ wire  Q;
 
 FFD U1(D,clk,reset,enable, Q);
 
+
 // inicio de la demostracion en diagramas de timing
 initial begin
+      clk=0;
       #1 reset = 1;
       $display("flip flop D");
       $display(" D   EN  |  Q ");
@@ -26,6 +28,7 @@ initial begin
       #50 D <= 1; enable =1;
 
 end
+
 
 // se llama a la simulaacion en gtk wave
 initial begin
