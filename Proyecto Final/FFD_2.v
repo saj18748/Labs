@@ -1,12 +1,16 @@
 
-//--------------------------------------- Acumulador --------------------------------------------
+//------------------------------------------- Acumulador --------------------------------------------------
 
-module FF_D (input clk, reset, enabled, input [3:0] D, output reg [3:0] Q);
+module Acumulador (input clk, enabled_Acumulador, reset, input [3:0] in_acumulador, output [3:0] out_Acumulador);
+reg [3:0] out_Acumulador;
 
-    always @ (posedge clk, posedge reset)
-        if (reset)
-            Q <= 4'b0000;
-        else if (enabled)
-            Q <= D;
-
+//  Se verifica el cambio del clock , con el enabled_Acumulador es igaul a 1, permite el paso del valor acumulado de la ALU
+always @ (posedge clk or posedge reset) begin
+  if ( enabled_Acumulador == 1) begin
+    out_Acumulador = in_acumulador;
+  end
+  if (reset == 1) begin
+    out_Acumulador = 4'b0000;
+  end
+end
 endmodule

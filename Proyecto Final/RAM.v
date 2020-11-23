@@ -1,26 +1,24 @@
 
-//------------------------- Memoria RAM -------------------------------------------------------------
+//---------------------------- Memoria RAM -------------------------------------------------------------
 
-module RAM (input wire [11:0] PCI ,input wire csRAM, weRAM, inout [3:0] data_bus, input wire[3:0] data_out);
-    reg [3:0] RAM [0:4095];
-    reg [3:0] data_salida;
-    assign data_bus = data_salida;
+module RAM (input csRAM, weRAM, input [11:0] address_RAM, inout [3:0] data_RAM);
+    reg [3:0] out_data;
+    reg [3:0] memory [0:4095];
 
-    //assign data_bus = (csRAM && !weRAM) ? data_salida:4'bzzzz;
-    always @ ( csRAM, weRAM)
-      begin
-        if (csRAM==1) begin
-            if (weRAM==0) begin
-              data_salida = RAM[PCI];
-            end
-            else begin
-              data_salida= data_out;
-              RAM[PCI] = data_salida;
-            end
+//  Comiezo del proceso de la RAM
+    assign data_RAM = (csRAM & ~weRAM) ? out_data : 4'bzzzz;
+
+    always @ ( address_RAM, csRAM, weRAM ) begin
+      if ( csRAM & ~weRAM ) begin
+        out_data = memory[address_RAM];
         end
-        else
-          begin
-            data_salida= 4'bzzzz;
-          end
-      end
+    end
+
+    always @ (csRAM, weRAM, data_RAM, address_RAM) begin
+
+        if ( csRAM & weRAM  ) begin
+          memory[address_RAM] = data_RAM;
+        end
+    end
+
 endmodule

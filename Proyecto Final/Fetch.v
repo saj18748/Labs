@@ -1,12 +1,17 @@
 
 //------------------------------------------------- Fetch -----------------------------------------------------
 
-module Fetch (input clk, reset, enabled, input [7:0] En, output reg [7:0] Ou);
+module Fetch (input clk, enabled_fetch, reset, input [7:0] in_fetch, output [7:0] out_fetch);
+  reg [7:0] out_fetch;
 
-    always @ (posedge clk, posedge reset)
-        if (reset)
-            Ou <= 8'b0000;
-        else if (enabled)
-            Ou <= En;
+    // Se revisa cada cambió de clk y reset, cuando enable es 1 deja pasar el valor
+  always @ ( posedge clk or posedge reset ) begin
+      if (enabled_fetch == 1 ) begin
+        out_fetch = in_fetch;
+      end
 
+      if (reset) begin
+        out_fetch=0;
+      end
+  end
 endmodule
